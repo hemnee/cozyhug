@@ -1,0 +1,718 @@
+@charset "utf-8";
+/*폰트
+font-family: 'Noto Sans KR', sans-serif;
+font-family: 'Noto Serif KR', serif;*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    vertical-align: middle;
+}
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 500;
+    color: #fff;
+}
+
+/*햄버거*/
+/*필요스타일시작*/
+
+/*햄버거 버튼모양*/
+.slide-open {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    z-index: 99;
+    display: none;
+}
+
+.burgur {
+    right: 15px;
+    top: 23px;
+    position: fixed;
+    width: 20px;
+    height: 2px;
+    background: #bdb6b6;
+}
+
+.burgur .top-line {
+    width: 20px;
+    height: 2px;
+    background-color: #bdb6b6;
+    bottom: -5px;
+    content: '';
+    position: absolute;
+    right: 0;
+    -webkit-transition: -webkit-transform .3s;
+    transition: transform .3s;
+
+}
+
+.burgur .bot-line {
+    width: 20px;
+    height: 2px;
+    background-color: #bdb6b6;
+    top: -5px;
+    content: '';
+    position: absolute;
+    right: 0;
+    -webkit-transition: -webkit-transform .3s;
+    transition: transform .3s;
+}
+
+.burgur.on {
+    width: 0;
+}
+
+.burgur.on .bot-line {
+    -webkit-transform: translateY(5px) rotate(135deg);
+    transform: translateY(5px) rotate(135deg);
+}
+
+.burgur.on .top-line {
+    -webkit-transform: translateY(-5px) rotate(-135deg);
+    transform: translateY(-5px) rotate(-135deg);
+}
+
+/*메뉴부분 모양*/
+.slide {
+    width: 50%;
+    /*이 너비에 따라 보이는 부분이 변화함*/
+    position: fixed;
+    right: -100%;
+    top: 0;
+    bottom: 0;
+    -webkit-transition: right .3s;
+    -moz-transition: right .3s;
+    -ms-transition: right .3s;
+    -o-transition: right .3s;
+    transition: right .3s;
+    background-color: #5d4444;
+    color: #fff;
+}
+
+.slide.on {
+    right: 0;
+}
+
+.slide ul {
+    padding-top: 15px;
+}
+
+.slide ul li {
+    display: inline-block;
+    width: 100%;
+    padding: 20px 0;
+    border-bottom: 1px solid #635454;
+}
+
+/*필요스타일끝*/
+
+/*header*/
+#header {
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    position: fixed;
+    z-index: 999;
+}
+
+.logo {
+    padding-top: 10px;
+    padding-bottom: 40px;
+}
+
+#gnb {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#gnb li {
+    width: 33.333%;
+    color: #635454;
+    font-family: 'Noto Serif KR', serif;
+    font-weight: bold;
+
+}
+
+.on>li>a {
+    color: #fff;
+}
+
+
+
+/*main_banner*/
+#main_banner {
+    margin: 0 auto;
+    width: 100%;
+    height: 650px;
+    background: url(../images/main_banner.jpg)no-repeat center top;
+    overflow: hidden;
+    background-size: cover;
+}
+
+.txt_box1 {
+    padding-top: 300px;
+    padding-left: 10%;
+}
+
+.txt_box1 h1 {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 45px;
+    color: #5d4444;
+    padding-bottom: 30px;
+}
+
+.txt_box1 p {
+    font-size: 20px;
+    color: #442b2b;
+}
+
+/*brand*/
+#brand {
+    margin: 0 auto;
+    width: 100%;
+    background: url(../images/pd_banner.jpg)no-repeat center top;
+    background-size: cover;
+    overflow: hidden;
+    height: 1060px;
+
+}
+
+#brand .txt_box2 {
+    width: 35%;
+    position: relative;
+    top: 50%;
+    left: 60%;
+    transform: translateY(-50%);
+    padding: 10px;
+
+
+}
+
+.txt_box2 h2 {
+    padding-bottom: 50px;
+    font-size: 120%;
+    font-weight: bold;
+    line-height: 150%;
+    color: #442b2b;
+}
+
+.txt_box2 p {
+    font-size: 90%;
+    line-height: 26px;
+    border-top: #5d4444 1px solid;
+    border-bottom: #5d4444 1px solid;
+    padding: 15px 0;
+    display: inline-block;
+    color: #5d4444;
+}
+
+/*product*/
+#product {
+    margin: 0 auto;
+    width: 100%;
+    height: 950px;
+    background: url(../images/at_bg.jpg)center top;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.pd_box {
+    max-width: 100%;
+    display: flex;
+    text-align: center;
+    padding-top: 100px;
+}
+
+.candle {
+    width: 25%;
+    align-items: center;
+}
+
+.candle h3 {
+    display: inline-block;
+    font-family: 'Noto Serif KR', serif;
+    font-size: 20px;
+    padding: 20px 0;
+    border-bottom: 1px solid #fff;
+
+}
+
+.candle a {
+    font-size: 18px;
+    display: inline-block;
+    padding-top: 15px;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 5px;
+}
+
+.candle p {
+    font-size: 18px;
+    font-weight: 400;
+    padding: 40px 0;
+    font-size: 18px;
+    line-height: 28px;
+
+}
+
+.candle>img {
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+/*class*/
+#class {
+    margin: 0 auto;
+    background: url(../images/class_bg.jpg)no-repeat center top;
+    background-size: cover;
+    width: 100%;
+    height: 1745px;
+    text-align: center;
+}
+
+.c_logo {
+    padding-top: 200px;
+    padding-bottom: 50px;
+}
+
+.c_txt {
+    margin: 0 auto;
+    width: 90%;
+    font-size: 24px;
+    margin-bottom: 200px;
+}
+
+.c_txt>span {
+    font-size: 16px;
+    line-height: 28px;
+}
+
+
+.swiper-wrapper {
+    margin-bottom: 50px;
+}
+
+.swiper-pagination>span {
+    width: 15px;
+    height: 15px;
+    background-color: #fffce5;
+}
+
+.mySwiper {
+    margin-bottom: 100px;
+}
+
+.swiper-slide {
+    text-align: center;
+    max-width: 100%;
+}
+
+.swiper-slide img {
+    max-width: 100%;
+}
+
+.map {
+    margin: 0 auto;
+    width: 50%;
+}
+
+.info_t {
+    padding-top: 10px;
+    text-align: left;
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 400;
+}
+
+#footer {
+    background-color: #ccc6c5;
+}
+
+.f_inner {
+    padding-top: 25px;
+    margin: 0 auto;
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.sns {
+    display: flex;
+}
+
+.sns li {
+    padding-left: 20px;
+}
+
+.sns img {
+    max-width: 100%;
+}
+
+#footer>p {
+    padding: 10px 0;
+    margin: 0 auto;
+    width: 70%;
+    color: #8d5050;
+    font-size: 16px;
+}
+
+.top {
+    display: block;
+    position: fixed;
+    bottom: 30px;
+    right: 20px;
+    max-width: 100%;
+}
+
+.logo img {
+    max-width: 100%;
+}
+
+/*모바일*/
+@media (max-width:766px) {
+    .slide-open {
+        display: block;
+    }
+
+    #gnb {
+        display: none;
+    }
+
+    .txt_box1 h1 {
+        font-family: 'Noto Serif KR', serif;
+        font-size: 30px;
+        color: #5d4444;
+        padding-bottom: 30px;
+    }
+
+    .txt_box1 p {
+        font-size: 15px;
+        color: #442b2b;
+    }
+
+    #brand {
+        width: 100%;
+        margin: 0 auto;
+        background: url(../images/pd_banner_m.jpg)no-repeat center top;
+        height: 800px;
+
+    }
+
+    #brand .txt_box2 {
+        position: static;
+        text-align: left;
+        transform: translateY(0);
+        padding: 0;
+        margin: 0 auto;
+        width: 90%;
+        padding-top: 250px;
+
+    }
+
+    .txt_box2 h2 {
+
+        padding-bottom: 25px;
+        font-size: 18px;
+        line-height: 28px;
+        font-weight: bold;
+        color: #fff;
+    }
+
+    .txt_box2 p {
+        font-size: 14px;
+        line-height: 24px;
+        border-top: #fff 1px solid;
+        border-bottom: #fff 1px solid;
+        padding: 15px 0;
+        display: inline-block;
+        color: #fff;
+    }
+
+    #product {
+        margin: 0 auto;
+        width: 100%;
+        height: 100%;
+        background: url(../images/at_bg.jpg)center top;
+        background-size: cover;
+        background-attachment: fixed;
+    }
+
+    .pd_box {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        text-align: center;
+        padding-top: 100px;
+    }
+
+    .candle {
+        width: 100%;
+        align-items: center;
+        padding-bottom: 30px;
+    }
+
+    .candle h3 {
+        font-size: 17px;
+        display: inline-block;
+        font-family: 'Noto Serif KR', serif;
+        font-size: 15px;
+        padding: 10px 0;
+        border-bottom: 1px solid #fff;
+
+    }
+
+    .candle a {
+        font-size: 14px;
+        display: inline-block;
+        padding-top: 15px;
+        border-bottom: 1px solid #fff;
+        padding-bottom: 5px;
+    }
+
+    .candle p {
+        font-size: 14px;
+        line-height: 24px;
+        padding: 20px 0;
+    }
+
+    #class {
+        margin: 0 auto;
+        background: url(../images/class_bg.jpg)no-repeat center top;
+        background-size: cover;
+        width: 100%;
+        height: 1550px;
+        text-align: center;
+    }
+
+    .c_logo {
+        padding-top: 150px;
+        padding-bottom: 30px;
+
+    }
+
+    .c_logo>img {
+        max-width: 100%;
+    }
+
+    .c_txt {
+        font-size: 18px;
+        margin-bottom: 70px;
+    }
+
+    .c_txt>span {
+        font-size: 14px;
+    }
+
+    .map {
+        margin: 0 auto;
+        width: 90%;
+    }
+
+    .info_t {
+        padding-top: 10px;
+        text-align: left;
+        font-size: 16px;
+        line-height: 26px;
+        font-weight: 400;
+    }
+
+    #footer {
+        background-color: #ccc6c5;
+    }
+
+    .f_inner {
+        padding-top: 25px;
+        margin: 0 auto;
+        width: 98%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .sns {
+        display: flex;
+    }
+
+    .sns li {
+        padding-left: 20px;
+    }
+
+    #footer>p {
+        padding: 10px 0;
+        margin: 0 auto;
+        width: 98%;
+        color: #8d5050;
+        font-size: 13px;
+    }
+
+    .top {
+        display: block;
+        position: fixed;
+        bottom: 30px;
+        right: 20px;
+    }
+
+    .f_logo {
+        display: none;
+    }
+
+    .swiper-wrapper {
+        margin-bottom: 60px;
+    }
+
+    .swiper-pagination>span {
+        width: 20px;
+        height: 20px;
+        background-color: #fffce5;
+    }
+}
+
+/*태블릿*/
+@media (min-width:767px) and (max-width:1200px) {
+    .slide-open {
+        display: block;
+    }
+
+    #gnb {
+        display: none;
+    }
+
+    #brand {
+        width: 100%;
+        margin: 0 auto;
+        background: url(../images/pd_banner_t.jpg)no-repeat center top;
+        height: 950px;
+
+    }
+
+    #brand .txt_box2 {
+        position: static;
+        text-align: left;
+        transform: translateY(0);
+        padding: 0;
+        margin: 0 auto;
+        width: 80%;
+        padding-top: 350px;
+
+    }
+
+    .txt_box2 h2 {
+
+        padding-bottom: 25px;
+        font-size: 25px;
+        line-height: 40px;
+        font-weight: bold;
+        color: #fff;
+    }
+
+    .txt_box2 p {
+        font-size: 17px;
+        line-height: 27px;
+        border-top: #fff 1px solid;
+        border-bottom: #fff 1px solid;
+        padding: 15px 0;
+        display: inline-block;
+        color: #fff;
+    }
+
+    #product {
+        margin: 0 auto;
+        width: 100%;
+        height: 100%;
+        background: url(../images/at_bg.jpg)center top;
+        background-size: cover;
+        background-attachment: fixed;
+    }
+
+    .pd_box {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        text-align: center;
+        padding-top: 100px;
+    }
+
+    .candle {
+        width: 50%;
+        align-items: center;
+        padding-bottom: 20px;
+    }
+
+    .candle h3 {
+        font-size: 18px;
+        display: inline-block;
+        font-family: 'Noto Serif KR', serif;
+        font-size: 15px;
+        padding: 10px 0;
+        border-bottom: 1px solid #fff;
+
+    }
+
+    .candle a {
+        font-size: 16px;
+        display: inline-block;
+        padding-top: 15px;
+        border-bottom: 1px solid #fff;
+        padding-bottom: 5px;
+    }
+
+    .candle p {
+        font-size: 16px;
+        line-height: 26px;
+        padding: 30px 0;
+    }
+
+    .c_logo {
+        padding-top: 170px;
+        padding-bottom: 30px;
+    }
+
+    .c_txt {
+        font-size: 22px;
+        margin-bottom: 80px;
+    }
+
+    .c_txt>span {
+        font-size: 16px;
+    }
+
+    .map {
+        margin: 0 auto;
+        width: 80%;
+    }
+
+    .info_t {
+        text-align: left;
+        font-size: 18px;
+        line-height: 26px;
+        font-weight: 400;
+    }
+
+    #class {
+        height: 1620px;
+    }
+
+    #footer>p {
+        font-size: 15px;
+    }
+}
